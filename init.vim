@@ -1,4 +1,14 @@
+" set runtimepath+=~/.vim,~/.vim/after
+" set packpath+=~/.vim
+" source ~/.vimrc
+
+" let g:python_host_prog = '/home/walkews/miniconda3/envs/neovim2/bin/python'
+" let g:python3_host_prog = '/home/walkews/miniconda3/bin/python'
+"
+"kj
 " general stuff
+
+set shortmess=I
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
@@ -26,7 +36,8 @@ let g:jsx_ext_required = 0
 let g:mta_filetypes = {
     \ 'javascript.jsx': 1,
     \}
-
+let g:closetag_filenames = "*html,*.xhtml,*.phtml,*.php,*.js,*.jsx"
+let g:prettier#config#parser = 'babylon'
 let g:user_emmet_key='<Tab>'
 let g:user_emmet_settings = {
     \ 'javascript.jsx' : {
@@ -34,9 +45,16 @@ let g:user_emmet_settings = {
     \ },
     \}
 
-" let g:UltiSnipsExpandTrigger="<c-l>"
+" let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<c-l>"
 
-autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
+" let g:syntastic_javascript_checkers = ['eslint']
+
+" autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
+" autocmd BufWritePre *.js execute ':! eslint --fix %'
+autocmd BufWritePre *.py execute ':Black'
 
 " map
 
@@ -61,10 +79,15 @@ nnoremap <silent> <C-S> :<C-u>Update<CR>
 " normal mode mappings
 " leader keys
 let mapleader = " "
+nnoremap <leader><leader>p :!prettier % --write L<cr>
+nnoremap <leader>f :Black<cr>
+nnoremap <leader>t :Files<cr>
+nnoremap <leader>r :Tags<cr>
+nnoremap <cr> :Buffers<cr>
 nnoremap <leader>n :b#<cr>
 nnoremap <leader>s :sp<cr>
 nnoremap <leader>v :vsp<cr>
-nnoremap <leader>c gcc
+nnoremap <leader>c :Commentary<cr>
 nnoremap <D-A-LEFT> <C-W>h
 nnoremap <D-A-DOWN> <C-W>j
 nnoremap <D-A-UP> <C-W>k
@@ -73,11 +96,19 @@ nnoremap <leader>h <C-W>h
 nnoremap <leader>j <C-W>j
 nnoremap <leader>k <C-W>k
 nnoremap <leader>l <C-W>l
+nnoremap <leader>H :vsp<cr><c-w>h
+nnoremap <leader>J :sp<cr>
+nnoremap <leader>K :sp<cr><c-w>k
 nnoremap <leader>L :vsp<cr>
-nnoremap <leader>H :sp<cr>
 nnoremap <silent> <leader>z :Goyo<cr>
+nnoremap <silent> <leader><leader>l :Limelight!!<cr>
 nnoremap <silent><leader>o :CtrlSpace O<CR>
 map <silent> <leader><cr> :noh<cr>
+
+nnoremap <silent><leader>gd :Gdiff<cr>
+nnoremap <silent><leader>gs :Gstatus<cr>
+nnoremap <silent><leader>gc :Gcommit<cr>
+
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -107,6 +138,9 @@ let g:ctrl_cmd   = 'CtrlP'
 let g:ctrlp_custom_ignore = 'node_modules|git'
 
 let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_fixers = {'javascript': ['eslint']}
+
+" autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
 let g:lightline = {
   \ 'colorscheme': 'onedark',
@@ -174,77 +208,89 @@ if &shell =~# 'fish$'
   set shell=/bin/bash
 endif
 
-set rtp+=$HOME/.vim/bundle/Vundle.vim
-call vundle#begin('$HOME/.vim/bundle/')
+" set rtp+=$HOME/.vim/bundle/Vundle.vim
+" call vundle#begin('$HOME/.vim/bundle/')
 
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
+call plug#begin('~/.local/share/nvim/plugged')
 
-" Plugin 'VundleVim/Vundle.vim'
-" Plugin 'maralla/completor.vim'
-Plugin 'cjrh/vim-conda'
-" Plugin 'ambv/black'
-Plugin 'joshdick/onedark.vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'tomasr/molokai'
-" Plugin 'wincent/command-t'
-Plugin 'tpope/vim-fugitive'
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-" Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'valloric/youcompleteme'
-" Plugin 'scrooloose/syntastic' 
-Plugin 'w0rp/ale'
-" Plugin 'bling/vim-airline'
-" Plugin 'airblade/vim-gitgutter'
-Plugin 'mattn/emmet-vim'
-Plugin 'tpope/vim-markdown'
-" Plugin 'plasticboy/vim-markdown'
-" Plugin 'suan/vim-instant-markdown'
-Plugin 'shime/livedown'
-Plugin 'othree/html5.vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'tpope/vim-commentary'
-Plugin 'digitaltoad/vim-pug'
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
-" Plugin 'mhinz/vim-startify'
-Plugin 'terryma/vim-smooth-scroll'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'tpope/vim-vinegar'
-Plugin 'amix/vim-zenroom2'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'vim-ctrlspace/vim-ctrlspace'
-Plugin 'skywind3000/asyncrun.vim'
+" Plug 'VundleVim/Vundle.vim'
+" Plug 'maralla/completor.vim'
+"
+Plug 'josudoey/vim-eslint-fix'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'nvie/vim-rst-tables'
+Plug 'cjrh/vim-conda'
+Plug 'ambv/black', {'on': 'Black', 'for': 'python'}
+Plug 'joshdick/onedark.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'townk/vim-autoclose'
+Plug 'flazz/vim-colorschemes'
+Plug 'tomasr/molokai'
+" Plug 'wincent/command-t'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'sjl/gundo.vim'
+Plug 'VundleVim/Vundle.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': 'yes \| ./install'  }
+Plug 'junegunn/fzf.vim'
+Plug 'valloric/youcompleteme', {'do': './install.py'}
+Plug 'scrooloose/syntastic' 
+Plug 'w0rp/ale'
+" Plug 'bling/vim-airline'
+" Plug 'airblade/vim-gitgutter'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-markdown'
+" Plug 'plasticboy/vim-markdown'
+" Plug 'suan/vim-instant-markdown'
+Plug 'shime/livedown'
+Plug 'othree/html5.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-commentary'
+Plug 'digitaltoad/vim-pug'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+" Plug 'mhinz/vim-startify'
+Plug 'terryma/vim-smooth-scroll'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tpope/vim-vinegar'
+Plug 'amix/vim-zenroom2'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'skywind3000/asyncrun.vim'
 
-" Plugin 'bling/vim-airline'
-Plugin 'itchyny/lightline.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'michalliu/sourcebeautify.vim'
-Plugin 'dhruvasagar/vim-table-mode'
-Plugin 'justinmk/vim-sneak'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'prettier/vim-prettier'
-Plugin 'valloric/matchtagalways'
-Plugin 'SirVer/ultisnips'
-Plugin 'epilande/vim-react-snippets'
-Plugin 'epilande/vim-es2015-snippets'
-Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-surround'
-" Plugin 'airblade/vim-gitgutter'
-Plugin 'wellle/targets.vim'
-" Plugin 'dbext.vim'
-Plugin 'tpope/vim-dadbod'
-Plugin 'malithsen/trello-vim'
+" Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
+Plug 'mileszs/ack.vim'
+Plug 'michalliu/sourcebeautify.vim'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'justinmk/vim-sneak'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx', {'for': 'javascript'}
+Plug 'prettier/vim-prettier'
+Plug 'valloric/matchtagalways'
+Plug 'SirVer/ultisnips'
+Plug 'epilande/vim-react-snippets', {'for': 'javascript'}
+Plug 'epilande/vim-es2015-snippets', {'for': 'javascript'}
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+" Plug 'airblade/vim-gitgutter'
+Plug 'wellle/targets.vim'
+" Plug 'dbext.vim'
+Plug 'tpope/vim-dadbod'
+Plug 'malithsen/trello-vim'
+
+call plug#end()
 
 " " AG --> Ack
-" let g:ackprg = 'ag --vimgrep --smart-case'
+let g:ackprg = 'ag --vimgrep --smart-case'
 
 " cnoreabbrev ag ACK
 " cnoreabbrev aG ACK
@@ -257,7 +303,7 @@ Plugin 'malithsen/trello-vim'
 
 let g:airline_powerline_fonts=1
 
-call vundle#end()            " required
+" call vundle#end()            " required
 filetype plugin indent on    " required
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
