@@ -1,0 +1,245 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/walkews/
+	..
+1545789819
+'b
+	/home/walkews/bin/
+	..
+1545789819
+'h
+	/home/walkews/
+	..
+1545789819
+'p
+	/mnt/c/personal
+	..
+1545920995
+'z
+	/home/walkews/.config/vifm
+	..
+1545789819
+
+# Bookmarks:
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/home/walkews/Git
+	i3-gaps
+2
+d/home/walkews/Git/i3-gaps
+	release.sh
+39
+d/home/walkews/Git
+	i3-gaps-deb
+3
+d/home/walkews
+	Git
+1
+d/home
+	walkews
+1
+d/
+	usr
+17
+d/usr
+	local
+5
+d/usr/local
+	bin
+1
+d/usr/local/bin
+	package-lock.json
+1
+d/usr/local
+	etc
+2
+d/usr
+	local
+5
+d/
+	home
+4
+d/home
+	walkews
+1
+d/home/walkews
+	.config
+5
+d/home/walkews/.config
+	vifm
+11
+d/home/walkews/.config/vifm
+	vifmrc
+4
+d/home/walkews/.config
+	vifm
+11
+d/home/walkews
+	.config
+5
+d/home
+	walkews
+1
+d/
+	mnt
+8
+d/mnt
+	c
+1
+d/mnt/c
+	personal
+29
+d/mnt/c/personal
+	waylonwalker
+24
+d/mnt/c/personal/waylonwalker
+	node_modules
+3
+d/mnt/c/personal
+	waylonwalker
+24
+d/mnt/c/personal/waylonwalker
+	.gitignore
+6
+d/mnt/c/personal
+	waylonwalker
+24
+d/mnt/c
+	personal
+29
+d/mnt/c/personal
+	waylonwalker
+24
+d/mnt/c
+	personal
+29
+d/mnt
+	c
+1
+d/
+	home
+4
+d/home
+	walkews
+1
+d/home/walkews
+	wallpaper
+30
+d/home/walkews/wallpaper
+	..
+0
+d/home/walkews
+	wallpaper
+24
+d/home
+	walkews
+1
+d/
+	home
+4
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm
+	data
+6
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm/data
+	raw
+3
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm/data/raw
+	2017-2018 Truck Warranty Review for ECM dowloads.xlsx
+3
+d
+
+# Right window history (oldest to newest):
+D/home/walkews/Git
+	dircolors-solarized
+1
+D/home/walkews
+	Git
+1
+D/home
+	walkews
+1
+D/home/walkews
+	Git
+21
+D/home/walkews/Git
+	dircolors-solarized
+1
+D/home/walkews
+	Git
+21
+D/home/walkews/Git
+	dircolors-solarized
+1
+D/home/walkews
+	Git
+21
+D/home/walkews/Git
+	z
+6
+D/home/walkews/Git/z
+	z.1
+4
+D/home/walkews/Git
+	test
+5
+D/home/walkews/Git/test
+	README
+3
+D
+
+# Command line history (oldest to newest):
+:view
+:quit
+:shell z personal
+:! 
+:q
+
+# Search history (oldest to newest):
+/git
+/reade
+/read
+/con
+//home
+/home
+/confi
+/pers
+/way
+
+# Prompt history (oldest to newest):
+ptest
+px
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/home/walkews/.local/share/vifm/Trash/000_2017_2018_FULL_SN.csv~
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/home/walkews/.local/share/vifm/Trash/000_2017_2018_FULL_SN.csz~
+	/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm/data/raw/2017_2018_FULL_SN.csz~
+t/home/walkews/.local/share/vifm/Trash/000_2017_2018_FULL_SN.csv~
+	/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm/data/raw/2017_2018_FULL_SN.csv~
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].0
+]F
+s0

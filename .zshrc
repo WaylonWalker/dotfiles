@@ -14,18 +14,24 @@ setopt INC_APPEND_HISTORY
 setopt EXTENDED_HISTORY
 
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'
+# export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-alias c='clear && ls -lht'
+alias c='f() { cd $1 && clear && pwd && ls -lht };f'
+alias cls='clear'
 alias cone='cd /mnt/c/Users/walkews/OneDrive\ -\ Caterpillar'
 alias cr='cd /mnt/c/Users/walkews/OneDrive\ -\ Caterpillar/LPSD-RemanAnalytics/projects/remananalytics/remananalytics'
 alias cpers='cd /mnt/c/personal'
 alias sp='source /usr/local/bin/set_proxy.sh'
 alias up='source /usr/local/bin/unset_proxy.sh'
 alias a='source activate $*'
+alias w='clear && curl "wttr.in/?pq"'
+alias m='clear && curl "wttr.in/moon?pq"'
 alias aa='source activate adhoc' 
 alias vim='nvim'
+alias ignore='curl https://www.gitignore.io/api/vim,node,data,emacs,python,pycharm,executable,sublimetext,visualstudio,visualstudiocode > .gitignore'
 
+
+alias p='clear && ptipython'
 
 . ~/Git/z/z.sh
 unsetopt BG_NICE
@@ -150,3 +156,6 @@ POWERLEVEL9K_VCS_BACKGROUND='white'
 POWERLEVEL9K_FOLDER_ICON=''
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ -s "$HOME/.local/share/marker/marker.sh"  ]] && source "$HOME/.local/share/marker/marker.sh"
+clear
+screenfetch
