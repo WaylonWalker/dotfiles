@@ -7,6 +7,7 @@ export ZSH="/home/walkews/.oh-my-zsh"
 eval `dircolors ~/Git/dircolors-solarized/dircolors.256dark`
 export PATH=/home/walkews/miniconda3/bin:$PATH
 export PATH=/user/local/lib/node_modules/bin:$PATH
+export PATH=$PATH:~/bin
 export EDITOR=vim
 export HISTSIZE=25000
 export SAVEHIST=25000
@@ -29,9 +30,16 @@ alias m='clear && curl "wttr.in/moon?pq"'
 alias aa='source activate adhoc' 
 alias vim='nvim'
 alias ignore='curl https://www.gitignore.io/api/vim,node,data,emacs,python,pycharm,executable,sublimetext,visualstudio,visualstudiocode > .gitignore'
+alias cat=bat
+alias tls=tmux ls
 
 
 alias p='clear && ptipython'
+alias p='powershell.exe Get-Clipboard'
+alias fcsv='tabview "$(fd csv | fzf --preview "cat {} | head -20 | column -ts,")"'
+
+
+alias gitignore='curl https://www.gitignore.io/api/vim,emacs,python,pycharm,sublimetext,visualstudio,visualstudiocode,data > .gitignore'
 
 . ~/Git/z/z.sh
 unsetopt BG_NICE
@@ -158,4 +166,76 @@ POWERLEVEL9K_FOLDER_ICON=''
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ -s "$HOME/.local/share/marker/marker.sh"  ]] && source "$HOME/.local/share/marker/marker.sh"
 clear
-screenfetch
+# screenfetch
+
+unalias z
+z() {
+      if [[ -z "$*" ]]; then
+              cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"
+                else
+                        _last_z_args="$@"
+                            _z "$@"
+                              fi
+                          }
+
+                          zz() {
+                                cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q "$_last_z_args")"
+                            }
+alias j=z
+fshow() {
+      git log --graph --color=always \
+                --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+        fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+                  --bind "ctrl-m:execute:
+                        (grep -o '[a-f0-9]\{7\}' | head -1 |
+                                        xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                                                        {}
+                                                        FZF-EOF"
+                                                    }
+fco() {
+      local tags branches target
+        tags=$(
+        git tag | awk '{print "\x1b[31;1mtag\x1b[m\t" $1}') || return
+          branches=$(
+          git branch --all | grep -v HEAD |
+          sed "s/.* //" | sed "s#remotes/[^/]*/##" |
+          sort -u | awk '{print "\x1b[34;1mbranch\x1b[m\t" $1}') || return
+            target=$(
+            (echo "$tags"; echo "$branches") |
+                fzf --no-hscroll --no-multi --delimiter="\t" -n 2 \
+                            --ansi --preview="git log -200 --pretty=format:%s $(echo {+2..} |  sed 's/$/../' )" ) || return
+                  git checkout $(echo "$target" | awk '{print $2}')
+              }
+fstash() {
+local out q k sha
+while out=$(
+git stash list --pretty="%C(yellow)%h %>(14)%Cgreen%cr %C(blue)%gs" |
+fzf --ansi --no-sort --query="$q" --print-query \
+--expect=ctrl-d,ctrl-b);
+do
+mapfile -t out <<< "$out"
+q="${out[0]}"
+k="${out[1]}"
+sha="${out[-1]}"
+sha="${sha%% *}"
+[[ -z "$sha" ]] && continue
+if [[ "$k" == 'ctrl-d' ]]; then
+git diff $sha
+elif [[ "$k" == 'ctrl-b' ]]; then
+git stash branch "stash-$sha" $sha
+break;
+else
+git stash show -p $sha
+fi
+done
+}
+
+fs() {
+	local -r fmt='#{session_id}:|#S|(#{session_attached} attached)'
+	{ tmux display-message -p -F "$fmt" && tmux list-sessions -F "$fmt"; } \
+		| awk '!seen[$1]++' \
+		| column -t -s'|' \
+		| fzf -q '$' --reverse --prompt 'switch session: ' -1 \
+		| cut -d':' -f1 \
+		| xargs tmux switch-client -t
+}
