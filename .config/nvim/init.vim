@@ -34,6 +34,7 @@ autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 
 " let $PATH = 'C:/Python+/64bit/envs/adhoc/;C:/Python+/64bit/envs/adhoc/Lib;C:/Python+/64bit/envs/adhoc/Lib/site-packaes/;' . $PATH
 " let $PYTHONPATH = 'c:/Python+/64bit/envs/adhoc/;C:/Python+/64bit/envs/adhoc/DLLs;C:/Python+/64bit/envs/adhoc/Lib;C:/Python+/64bit/envs/adhoc/Lib/site-packages/'
+let g:pymode_lint_config='~/pylint.rc'
 
 " jsx
 let g:jsx_ext_required = 0
@@ -42,7 +43,7 @@ let g:mta_filetypes = {
     \}
 let g:closetag_filenames = "*html,*.xhtml,*.phtml,*.php,*.js,*.jsx"
 " let g:prettier#config#parser = 'babylon'
-let g:user_emmet_key='<Tab>'
+" let g:user_emmet_leader_key='<c-l>'
 let g:user_emmet_settings = {
     \ 'javascript.jsx' : {
     \     'extends' : 'jsx',
@@ -243,6 +244,7 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Plug 'powerline/powerline'
 
 " Plug 'VundleVim/Vundle.vim'
 " Plug 'bling/vim-airline'

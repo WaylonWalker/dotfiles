@@ -8,7 +8,7 @@ eval `dircolors ~/Git/dircolors-solarized/dircolors.256dark`
 export PATH=/home/walkews/miniconda3/bin:$PATH
 export PATH=/user/local/lib/node_modules/bin:$PATH
 export PATH=$PATH:~/bin
-export EDITOR=vim
+export EDITOR=nvim
 export HISTSIZE=25000
 export SAVEHIST=25000
 setopt INC_APPEND_HISTORY
@@ -31,15 +31,19 @@ alias aa='source activate adhoc'
 alias vim='nvim'
 alias ignore='curl https://www.gitignore.io/api/vim,node,data,emacs,python,pycharm,executable,sublimetext,visualstudio,visualstudiocode > .gitignore'
 alias cat=bat
-alias tls=tmux ls
 
+alias tls=tmux ls
+alias fa='tmux attach -t "$(tmux ls | cut -d : -f1 | fzf)"'
+alias ta='tmux attach -t "$(tmux ls | cut -d : -f1 | fzf)"'
+alias tn='tmux new -s $1'
 
 alias p='clear && ptipython'
 alias p='powershell.exe Get-Clipboard'
 alias fcsv='tabview "$(fd csv | fzf --preview "cat {} | head -20 | column -ts,")"'
 
-
 alias gitignore='curl https://www.gitignore.io/api/vim,emacs,python,pycharm,sublimetext,visualstudio,visualstudiocode,data > .gitignore'
+
+alias fix='reset; stty sane; tput rs1; clear; echo -e "\033c"'
 
 . ~/Git/z/z.sh
 unsetopt BG_NICE
