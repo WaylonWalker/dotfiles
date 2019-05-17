@@ -6,8 +6,10 @@ export TERM="xterm-256color"
 export ZSH="/home/walkews/.oh-my-zsh"
 eval `dircolors ~/Git/dircolors-solarized/dircolors.256dark`
 export PATH=/home/walkews/miniconda3/bin:$PATH
-export PATH=/user/local/lib/node_modules/bin:$PATH
+export PATH=/home/walkews/.local/bin/:$PATH
+export PATH=/usr/local/lib/node_modules/bin:$PATH
 export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin/mongodb-linux-x86_64-debian92-4.0.9/bin
 export EDITOR=nvim
 export HISTSIZE=25000
 export SAVEHIST=25000
@@ -24,7 +26,11 @@ alias cr='cd /mnt/c/Users/walkews/OneDrive\ -\ Caterpillar/LPSD-RemanAnalytics/p
 alias cpers='cd /mnt/c/personal'
 alias sp='source /usr/local/bin/set_proxy.sh'
 alias up='source /usr/local/bin/unset_proxy.sh'
-alias a='source activate $*'
+a() {source activate "$(conda info --envs | fzf | awk '{print $1}')";}
+vf() { fzf | xargs -r -I % $EDITOR % ;}
+bf() { bash "$(fzf)" }
+gadd() { git status -s | fzf -m | awk '{print $2}' | xargs git add && git status -s}
+greset() { git status -s |  fzf -m | awk '{print $2}' |xargs git reset && git status -s}
 alias w='clear && curl "wttr.in/?pq"'
 alias m='clear && curl "wttr.in/moon?pq"'
 alias aa='source activate adhoc' 
@@ -33,8 +39,8 @@ alias ignore='curl https://www.gitignore.io/api/vim,node,data,emacs,python,pycha
 alias cat=bat
 
 alias tls=tmux ls
-alias fa='tmux attach -t "$(tmux ls | cut -d : -f1 | fzf)"'
 alias ta='tmux attach -t "$(tmux ls | cut -d : -f1 | fzf)"'
+alias sa='bash ~/.machines/"$(ls ~/.machines | fzf)"'
 alias tn='tmux new -s $1'
 
 alias p='clear && ptipython'
@@ -243,3 +249,19 @@ fs() {
 		| cut -d':' -f1 \
 		| xargs tmux switch-client -t
 }
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/walkews/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/walkews/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/walkews/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/walkews/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

@@ -8,6 +8,8 @@
 let g:python_lint_config = '~/pylint.rc'
 " general stuff
 
+set autoread
+au CursorHold * checktime
 set shortmess=I
 set guioptions-=m
 set guioptions-=T
@@ -55,10 +57,23 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsExpandTrigger="<c-l>"
 
-" let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint']
 
-" autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
-" autocmd BufWritePre *.js execute ':! eslint --fix %'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:syntastic_javascript_eslint_exe = 'eslint % --fix'
+
+
+
+autocmd BufWritePost *.js AsyncRun -post=checktime eslint --fix %
+" autocmd BufWritePre *.js execute ':!eslint --fix %'
 autocmd BufWritePre *.py execute ':Black'
 autocmd BufWritePost .tmux.conf execute ':!tmux source-file %'
 autocmd BufWritePost init.vim execute ':source %'
@@ -102,6 +117,7 @@ let mapleader = " "
 nnoremap <leader><leader>p :!prettier % --write L<cr>
 nnoremap <leader>f :Black<cr>
 nnoremap <leader>c :Commentary<cr>
+nnoremap <leader>u gu
 
 " navigation
 nnoremap <leader>t :Files<cr>
@@ -124,6 +140,7 @@ nnoremap <leader>H :vsp<cr><c-w>h
 nnoremap <leader>J :sp<cr>
 nnoremap <leader>K :sp<cr><c-w>k
 nnoremap <leader>L :vsp<cr>
+nnoremap <leader>i :TagbarToggle<CR>
 
 
 " interface
@@ -147,10 +164,18 @@ nnoremap <silent><leader>x :x<cr>
 map <F6> :setlocal spell! spelllang=en_us<CR>
 nnoremap <F5> :buffers<CR>:buffer<Space>
 
-nnoremap <silent><leader>y "cyy :! echo "<C-R>c" \| clip.exe <CR>
+" nnoremap <silent><leader>y "cyy :! echo "<C-R>c" \| clip.exe <CR>
+nnoremap <silent><leader>y :w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
+vmap <silent><leader>y :w! ~/.vimbuffer \| !cat ~/.vimbuffer \| clip.exe <CR><CR>
 nnoremap <silent><leader>p ! powershell.exe Get-Clipboard <CR>
 nnoremap zt zt<C-Y><C-Y><C-Y>
 
+" bubbling
+nmap <C-k> ddkP
+nmap <C-j> ddp
+
+vmap <C-k> xkP`[V`]
+vmap <C-j> xp`[V`]
 
 
 " set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -265,6 +290,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Plug 'terryma/vim-smooth-scroll'
 " Plug 'tpope/vim-dadbod'
 " Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'majutsushi/tagbar'
+Plug 'djoshea/vim-autoread'
+Plug 'captbaritone/repo-vimrc'
 Plug 'SirVer/ultisnips'
 Plug 'TaDaa/vimade'
 Plug 'airblade/vim-gitgutter'
@@ -305,6 +333,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'valloric/matchtagalways'
 Plug 'valloric/youcompleteme', {'do': './install.py'}
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'yuttie/comfortable-motion.vim'

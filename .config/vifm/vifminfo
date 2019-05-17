@@ -2,9 +2,9 @@
 
 # Marks:
 'H
-	/home/walkews/
-	..
-1545789819
+	/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects
+	reman_yield
+1553126999
 'b
 	/home/walkews/bin/
 	..
@@ -13,6 +13,14 @@
 	/home/walkews/
 	..
 1545789819
+'j
+	/mnt/c/personal
+	1-cuttin-scrap
+1553127017
+'k
+	/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects
+	reman_yield
+1553126991
 'p
 	/mnt/c/personal
 	..
@@ -155,8 +163,119 @@ d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_
 	raw
 3
 d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm/data/raw
-	2017-2018 Truck Warranty Review for ECM dowloads.xlsx
+	2017 Profit Center SX C15 Truck Warranty.xlsx
+2
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm/data
+	interim
+1
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm
+	data
+7
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects
+	white_hat_ecm
+40
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics
+	projects
+6
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects
+	white_hat_ecm
+40
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm
+	data
+7
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm/data
+	interim
+1
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm
+	data
+7
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects
+	white_hat_ecm
+40
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics
+	projects
+6
+d/mnt/c/Users/walkews/OneDrive - Caterpillar
+	pea_course
+11
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/pea_course
+	..
+0
+d/mnt/c/Users/walkews/OneDrive - Caterpillar
+	Notebooks
+7
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/Notebooks
+	..
+0
+d/mnt/c/Users/walkews/OneDrive - Caterpillar
+	LPSD-RemanAnalytics
+6
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics
+	projects
+6
+d/mnt/c/Users/walkews/OneDrive - Caterpillar
+	LPSD-RemanAnalytics
+6
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics
+	projects
+6
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects
+	reman_yield
+36
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/reman_yield
+	eds_drawing_notes.csv
+21
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects
+	sn_xref
+23
+d/mnt/c/personal
+	dotfiles
+14
+d/mnt/c/personal/dotfiles
+	..
+0
+d/mnt/c/personal
+	dotfiles
+14
+d/mnt/c
+	personal
+30
+d/mnt
+	c
+1
+d/mnt/c
+	logs
+29
+d/mnt/c/logs
+	..
+0
+d/mnt/c/personal
+	gatc3
+15
+d/mnt/c
+	personal
+30
+d/mnt/c/personal
+	gatsby
 3
+d/mnt/c
+	personal
+30
+d/mnt/c/personal
+	waylonwalker.github.io
+29
+d/mnt/c/personal/waylonwalker.github.io
+	..
+0
+d/mnt/c/personal
+	waylonwalker.github.io
+29
+d/mnt/c/personal/waylonwalker.github.io
+	_config.yml
+26
+d/mnt/c/personal
+	gatsby-deck
+17
 d
 
 # Right window history (oldest to newest):
@@ -203,6 +322,7 @@ D
 :quit
 :shell z personal
 :! 
+:jjkk
 :q
 
 # Search history (oldest to newest):
@@ -214,24 +334,27 @@ D
 /home
 /confi
 /pers
+/yiel
 /way
+/gat
+/jjkkkjj
+/waylon
 
 # Prompt history (oldest to newest):
 ptest
 px
+peds_basic.csv
 
 # Local filter history (oldest to newest):
+|gat
 
 # Registers:
-""/home/walkews/.local/share/vifm/Trash/000_2017_2018_FULL_SN.csv~
 
 # Directory stack (oldest to newest):
 
 # Trash content:
 t/home/walkews/.local/share/vifm/Trash/000_2017_2018_FULL_SN.csz~
 	/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm/data/raw/2017_2018_FULL_SN.csz~
-t/home/walkews/.local/share/vifm/Trash/000_2017_2018_FULL_SN.csv~
-	/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects/white_hat_ecm/data/raw/2017_2018_FULL_SN.csv~
 
 # State:
 f
