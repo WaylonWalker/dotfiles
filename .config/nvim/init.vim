@@ -305,6 +305,7 @@ Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 Plug 'junegunn/fzf', { 'do': 'yes \| ./install'  }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
@@ -337,6 +338,7 @@ Plug 'valloric/youcompleteme', {'do': './install.py'}
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " " AG --> Ack
@@ -380,5 +382,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "           \ <SID>isAtStartOfLine('__') ?
 "           \ '<c-o>:silent! TableModeDisable<cr>' : '__'
 
-colors onedark
+" colors onedark
+colors one
 
+set background=dark

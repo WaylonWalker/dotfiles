@@ -42,93 +42,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/home/walkews/Git
-	i3-gaps
-2
-d/home/walkews/Git/i3-gaps
-	release.sh
-39
-d/home/walkews/Git
-	i3-gaps-deb
-3
-d/home/walkews
-	Git
-1
-d/home
-	walkews
-1
-d/
-	usr
-17
-d/usr
-	local
-5
-d/usr/local
-	bin
-1
-d/usr/local/bin
-	package-lock.json
-1
-d/usr/local
-	etc
-2
-d/usr
-	local
-5
-d/
-	home
-4
-d/home
-	walkews
-1
-d/home/walkews
-	.config
-5
-d/home/walkews/.config
-	vifm
-11
-d/home/walkews/.config/vifm
-	vifmrc
-4
-d/home/walkews/.config
-	vifm
-11
-d/home/walkews
-	.config
-5
-d/home
-	walkews
-1
-d/
-	mnt
-8
-d/mnt
-	c
-1
-d/mnt/c
-	personal
-29
-d/mnt/c/personal
-	waylonwalker
-24
-d/mnt/c/personal/waylonwalker
-	node_modules
-3
-d/mnt/c/personal
-	waylonwalker
-24
-d/mnt/c/personal/waylonwalker
-	.gitignore
-6
-d/mnt/c/personal
-	waylonwalker
-24
-d/mnt/c
-	personal
-29
-d/mnt/c/personal
-	waylonwalker
-24
 d/mnt/c
 	personal
 29
@@ -274,8 +187,161 @@ d/mnt/c/personal/waylonwalker.github.io
 	_config.yml
 26
 d/mnt/c/personal
-	gatsby-deck
-17
+	mc
+14
+d/mnt/c/personal/mc
+	create.sh
+1
+d/mnt/c/personal
+	1-cuttinscrap.github.io
+2
+d/mnt/c
+	personal
+14
+d/mnt/c/personal
+	..
+0
+d/mnt/c
+	personal
+14
+d/mnt/c/personal
+	..
+0
+d/mnt/c
+	personal
+14
+d/mnt/c/personal
+	..
+0
+d/mnt/c
+	personal
+14
+d/mnt/c/personal
+	..
+0
+d/mnt/c
+	personal
+14
+d/mnt/c/personal
+	..
+0
+d/mnt/c
+	personal
+14
+d/mnt/c/personal
+	python tips
+11
+d/mnt/c/personal/python tips
+	..
+0
+d/mnt/c/personal
+	personal
+9
+d/mnt/c
+	personal
+14
+d/mnt
+	c
+1
+d/mnt/c
+	temp
+14
+d/mnt/c/temp
+	block_overprocessing
+14
+d/mnt/c/temp/block_overprocessing
+	index.html
+1
+d/mnt/c/temp
+	vifm
+14
+d/mnt/c/temp/vifm
+	nest
+1
+d/mnt/c/temp/vifm/nest
+	..
+0
+d/mnt/c/temp/vifm
+	nest
+1
+d/mnt/c/temp/vifm/nest
+	
+1
+d/mnt/c/temp/vifm
+	nest
+1
+d/mnt/c/temp/vifm/nest
+	tem1.py
+1
+d/mnt/c/temp/vifm
+	nest
+1
+d/mnt/c/temp
+	vifm
+14
+d/mnt/c
+	temp
+30
+d/mnt/c/temp
+	vifm
+14
+d/mnt/c/temp/vifm
+	nest
+1
+d/mnt/c/temp/vifm/nest
+	tem1.py
+1
+d/mnt/c/temp/vifm
+	nest
+1
+d/mnt/c/temp
+	vifm
+14
+d/mnt/c
+	Users
+18
+d/mnt/c/Users
+	walkews
+6
+d/mnt/c/Users/walkews
+	OneDrive - Caterpillar
+41
+d/mnt/c/Users/walkews/OneDrive - Caterpillar
+	LPSD-RemanAnalytics
+6
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics
+	projects
+6
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/projects
+	sn_xref
+35
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics
+	packages
+5
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/packages
+	sagemaker_fix
+11
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/packages/sagemaker_fix
+	sagemaker_lifecycle
+1
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/packages/sagemaker_fix/sagemaker_lifecycle
+	sagemaker_lifecycle
+2
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/packages/sagemaker_fix/sagemaker_lifecycle/sagemaker_lifecycle
+	..
+0
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/packages/sagemaker_fix/sagemaker_lifecycle
+	sagemaker_lifecycle
+2
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/packages/sagemaker_fix/sagemaker_lifecycle/sagemaker_lifecycle
+	..
+0
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/packages/sagemaker_fix/sagemaker_lifecycle
+	sagemaker_lifecycle
+2
+d/mnt/c/Users/walkews/OneDrive - Caterpillar/LPSD-RemanAnalytics/packages/sagemaker_fix
+	sagemaker_lifecycle
+1
 d
 
 # Right window history (oldest to newest):
@@ -315,6 +381,15 @@ D/home/walkews/Git
 D/home/walkews/Git/test
 	README
 3
+D/home/walkews/Git
+	Terminal
+2
+D/home/walkews/Git/Terminal
+	.git
+1
+D/home/walkews/Git
+	Belfast
+1
 D
 
 # Command line history (oldest to newest):
@@ -323,7 +398,16 @@ D
 :shell z personal
 :! 
 :jjkk
+:mkdir vifm
+:touch tem1.py
+:touch tem2.py
+:mkdir nest
 :q
+:help
+:h
+:/
+:?
+:exit
 
 # Search history (oldest to newest):
 /git
@@ -339,6 +423,8 @@ D
 /gat
 /jjkkkjj
 /waylon
+/temp
+/.csv
 
 # Prompt history (oldest to newest):
 ptest
